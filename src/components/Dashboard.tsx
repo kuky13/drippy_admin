@@ -22,6 +22,8 @@ interface StatusData {
   cpu?: number;
   memory?: number;
   uptime?: string | number;
+  api?: string;
+  version?: string;
 }
 
 export default function Dashboard({ onLogout }: { onLogout: () => void }) {
