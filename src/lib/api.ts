@@ -1,4 +1,4 @@
-const API_BASE = "http://31.97.168.87:4000";
+const API_BASE = "/api";
 const AUTH_TOKEN = "katyusha";
 
 const headers = {
