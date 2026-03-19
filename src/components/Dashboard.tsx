@@ -180,6 +180,10 @@ export default function Dashboard({ onLogout }: { onLogout: () => void }) {
             logs={logs}
             autoRefresh={autoRefresh}
             onToggleRefresh={() => setAutoRefresh(!autoRefresh)}
+            onClearLogs={async () => {
+              await clearLogs();
+              setLogs([]);
+            }}
           />
         </CyberCard>
       </motion.div>

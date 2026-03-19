@@ -27,3 +27,12 @@ export async function sendControl(action: "restart" | "stop" | "start") {
   if (!res.ok) throw new Error(`CONTROL_ERR_${res.status}`);
   return res.json();
 }
+
+export async function clearLogs() {
+  const res = await fetch(`${API_BASE}/clear-logs`, {
+    method: "POST",
+    headers,
+  });
+  if (!res.ok) throw new Error(`CLEAR_LOGS_ERR_${res.status}`);
+  return res.json();
+}
