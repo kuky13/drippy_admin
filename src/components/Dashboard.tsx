@@ -11,6 +11,8 @@ import {
   Terminal,
   Zap,
   LogOut,
+  BrainCircuit,
+  Layers,
 } from "lucide-react";
 import CyberCard from "./CyberCard";
 import StatusBar from "./StatusBar";
