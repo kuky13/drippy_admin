@@ -11,6 +11,8 @@ import {
   Terminal,
   Zap,
   LogOut,
+  BrainCircuit,
+  Layers,
 } from "lucide-react";
 import CyberCard from "./CyberCard";
 import StatusBar from "./StatusBar";
@@ -22,6 +24,8 @@ interface StatusData {
   cpu?: number;
   memory?: number;
   uptime?: string | number;
+  api?: string;
+  version?: string;
 }
 
 export default function Dashboard({ onLogout }: { onLogout: () => void }) {
@@ -118,7 +122,7 @@ export default function Dashboard({ onLogout }: { onLogout: () => void }) {
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4 mb-6"
+        className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3 md:gap-4 mb-6"
       >
         <CyberCard title="STATUS" icon={Activity}>
           <div className="flex items-center gap-2">
@@ -140,6 +144,18 @@ export default function Dashboard({ onLogout }: { onLogout: () => void }) {
         <CyberCard title="UPTIME" icon={Clock}>
           <span className="font-mono-code text-lg font-bold text-foreground">
             {formatUptime(status.uptime)}
+          </span>
+        </CyberCard>
+
+        <CyberCard title="IA ENGINE" icon={BrainCircuit}>
+          <span className="font-mono-code text-sm font-bold text-primary">
+            {status.api || "N/A"}
+          </span>
+        </CyberCard>
+
+        <CyberCard title="MODELO" icon={Layers}>
+          <span className="font-mono-code text-sm font-bold text-primary">
+            {status.version || "N/A"}
           </span>
         </CyberCard>
       </motion.div>
