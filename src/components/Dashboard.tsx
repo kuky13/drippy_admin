@@ -15,7 +15,7 @@ import {
 import CyberCard from "./CyberCard";
 import StatusBar from "./StatusBar";
 import LogConsole from "./LogConsole";
-import { fetchStatus, fetchLogs, sendControl } from "@/lib/api";
+import { fetchStatus, fetchLogs, sendControl, clearLogs } from "@/lib/api";
 
 interface StatusData {
   status?: string;
